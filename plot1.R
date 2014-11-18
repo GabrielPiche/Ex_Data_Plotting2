@@ -9,7 +9,7 @@ NEI_R <- NEI
 Question1 <- aggregate(Emissions ~ year, NEI_R, sum)
 
 #Plotting the chart and saving as plot1.png
-png(file="plot1.png")
+dev.copy(png, file="plot1.png")
 
 plot1 <- plot(Question1$year, Question1$Emissions, xlab = "Year", ylab = "Emissions of" ~PM[2.5] ~ "(tons)", main = "Emissions of" ~ PM[2.5] ~ "in tons per Year", type = "l")
 
