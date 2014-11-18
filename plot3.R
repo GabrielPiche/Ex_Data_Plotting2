@@ -15,7 +15,9 @@ NEI_R <- filter(NEI_R, NEI_R$fips == "24510")
 Question3 <- aggregate(Emissions ~ year + type, NEI_R, sum)
 
 #Creating the graph
-png(file="plot3.png")
+dev.copy(png, file="plot3.png")
+
 g <- qplot(year, Emissions, data = Question3, color = type, facets = type ~., xlab = "Year", ylab = "Emissions of" ~ PM[2.5] ~ "(tons)", main = "Emissions of" ~ PM[2.5] ~ "tons per Year in Baltimore City")
 plot3 <- g + geom_line()
+
 dev.off()
