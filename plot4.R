@@ -18,6 +18,8 @@ Merged_R <- Merged[grepl("[C,c]oal", Merged$EI.Sector, ignore.case=T),]
 Question4 <- aggregate(Emissions ~ year, Merged_R, sum)
 
 #Plotting plot4
-png(file="plot4.png")
+dev.copy(png, file="plot4.png")
+
 plot4 <- plot(Question4$year, Question4$Emissions, type = "l", xlab = "Year", ylab = "Emissions of" ~ PM[2.5] ~ "(tons)", main = "Emissions from coal combustion-related sources in the US")
+
 dev.off()
