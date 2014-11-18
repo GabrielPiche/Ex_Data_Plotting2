@@ -20,7 +20,7 @@ Merged_R <- filter(Merged, Merged$fips == "24510" & Merged$type == "ON-ROAD")
 Question5 <- aggregate(Emissions ~ year, Merged_R, sum)
 
 #Plotting plot4
-dev.copy(png, file="plot6.png")
+dev.copy(png, file="plot5.png")
 
 plot6_R <- plot(Question6$year, Question6$Emissions, type = "l",xlab = "Year", ylab = "Emissions of" ~ PM[2.5] ~ "(tons)", main = "Emissions from motor vehicle sources in Baltimore City")
 plot6 <- plot6_R+theme(legend.title = element_text(colour="black", size=12, face="bold")) + scale_colour_discrete(name="County") + theme(plot.title = element_text(size=14, face="bold"))
